@@ -33,7 +33,7 @@
     <div class="bottom_header dark_skin main_menu_uppercase">
         <div class="container">
             <nav class="navbar navbar-expand-lg">
-                <a class="navbar-brand" href="/">
+                <a class="navbar-brand" asp-route="HomePage">
                     <img class="logo_light" src="images/logo_light.png" alt="logo" />
                     <img class="logo_dark" src="images/logo_dark.png" alt="logo" />
                 </a>
@@ -48,34 +48,42 @@
 
                         </li>
                         <li class="dropdown dropdown-mega-menu">
-                            <a class="dropdown-toggle nav-link" href="/shop" data-bs-toggle="dropdown">Shop</a>
+                            <a class="dropdown-toggle nav-link" asp-action="ShopList" asp-controller="shop" data-bs-toggle="dropdown">Shop</a>
                             <div class="dropdown-menu">
                                 <ul class="mega-menu d-lg-flex">
                                     <li class="mega-menu-col col-lg-3">
                                         <ul>
                                             <li class="dropdown-header">Woman's</li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="/shop">Vestibulum
+                                            <li>
+                                                <a class="dropdown-item nav-link nav_item" asp-action="ShopList" asp-controller="Shop">
+                                                    Vestibulum
                                                     sed</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="/shop">Donec
+                                            <li>
+                                                <a class="dropdown-item nav-link nav_item" asp-controller="ShopController" asp-action="ShopList">
+                                                    Donec
                                                     porttitor</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="/shop">Donec vitae
+                                            <li>
+                                                <a class="dropdown-item nav-link nav_item" asp-controller="ShopController" asp-action="ShopList">
+                                                    Donec vitae
                                                     facilisis</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="/shop">Curabitur
+                                            <li>
+                                                <a class="dropdown-item nav-link nav_item" asp-controller="ShopController" asp-action="ShopList">
+                                                    Curabitur
                                                     tempus</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="/shop">Vivamus in
+                                            <li><a class="dropdown-item nav-link nav_item" asp-controller="ShopController" asp-action="ShopList" >Vivamus in
                                                     tortor</a></li>
                                         </ul>
                                     </li>
                                     <li class="mega-menu-col col-lg-3">
                                         <ul>
                                             <li class="dropdown-header">Men's</li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="/shop">Donec
+                                            <li><a class="dropdown-item nav-link nav_item" asp-controller="ShopController" asp-action="ShopList" >Donec
                                                     vitae ante ante</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="/shop">Etiam ac
+                                            <li><a class="dropdown-item nav-link nav_item" asp-controller="ShopController" asp-action="ShopList" >Etiam ac
                                                     rutrum</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="/shop">Quisque
+                                            <li><a class="dropdown-item nav-link nav_item" asp-controller="ShopController" asp-action="ShopList" >Quisque
                                                     condimentum</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="/shop">Curabitur
+                                            <li><a class="dropdown-item nav-link nav_item" asp-controller="ShopController" asp-action="ShopList" >Curabitur
                                                     laoreet</a></li>
                                             <li><a class="dropdown-item nav-link nav_item"
                                                     href="order-completed.html">Vivamus in tortor</a></li>
@@ -155,7 +163,7 @@
                             </div>
                         </li>
                         <li class="dropdown dropdown-mega-menu">
-                            <a class="dropdown-toggle nav-link" href="#" data-bs-toggle="dropdown">Rent</a>
+                            <a class="dropdown-toggle nav-link" asp-controller="ShopController" asp-action="RentList" data-bs-toggle="dropdown">Rent</a>
                             <div class="dropdown-menu">
                                 <ul class="mega-menu d-lg-flex">
                                     <li class="mega-menu-col col-lg-3">
@@ -261,8 +269,8 @@
                                 </div>
                             </div>
                         </li>
-                        <li><a class="nav-link nav_item" href="/contact-us">Contact</a></li>
-                        <li><a class="nav-link nav_item" href="/about-us">About</a></li>
+                        <li><a class="nav-link nav_item" asp-route="ContactPage">Contact</a></li>
+                        <li><a class="nav-link nav_item" asp-route="AboutPage">About</a></li>
                     </ul>
                 </div>
                 <ul class="navbar-nav attr-nav align-items-center">

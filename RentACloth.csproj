@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <Folder Include="Views\Shared\Partials\" />
-    <Folder Include="Views\Shop\" />
   </ItemGroup>
 
 </Project>
