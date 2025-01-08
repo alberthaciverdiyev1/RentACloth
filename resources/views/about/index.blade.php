@@ -31,15 +31,14 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <div class="about_img scene mb-4 mb-lg-0">
-                            <img src="/images/about_img.jpg" alt="about_img"/>
+                            <img src="{{ asset('storage/' . $about->base64_main_image) }}" alt="about_img"/>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="heading_s1">
                             <h2>Who We are</h2>
                         </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. consequuntur quibusdam enim expedita sed nesciunt incidunt accusamus adipisci officia libero laboriosam!</p>
-                        <p>Proin gravida nibh vel velit auctor aliquet. nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vultate cursus a sit amet mauris. Duis sed odio sit amet nibh vultate cursus a sit amet mauris.</p>
+                        {!! $about->main_text !!}
                     </div>
                 </div>
             </div>
@@ -61,33 +60,33 @@
                     <div class="col-lg-4 col-sm-6">
                         <div class="icon_box icon_box_style4 box_shadow1">
                             <div class="icon">
-                                <i class="ti-pencil-alt"></i>
+                                <i class="{!! $about->w_icon_1 !!}"></i>
                             </div>
                             <div class="icon_box_content">
-                                <h5>Creative Design</h5>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
+                                <h5>{{$about->w_title_1}}</h5>
+                                <p>{{$about->w_description_1}}</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-6">
                         <div class="icon_box icon_box_style4 box_shadow1">
                             <div class="icon">
-                                <i class="ti-layers"></i>
+                                <i class="{!! $about->w_icon_2 !!}"></i>
                             </div>
                             <div class="icon_box_content">
-                                <h5>Flexible Layouts</h5>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
+                                <h5>{{$about->w_title_1}}</h5>
+                                <p>{{$about->w_description_1}}</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-6">
                         <div class="icon_box icon_box_style4 box_shadow1">
                             <div class="icon">
-                                <i class="ti-email"></i>
+                                <i class="{!! $about->w_icon_3 !!}"></i>
                             </div>
                             <div class="icon_box_content">
-                                <h5>Email Marketing</h5>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
+                                <h5>{{$about->w_title_1}}</h5>
+                                <p>{{$about->w_description_1}}</p>
                             </div>
                         </div>
                     </div>

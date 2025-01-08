@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AboutUs;
 use Illuminate\Http\Request;
 
 class ViewController extends Controller
@@ -13,6 +14,8 @@ class ViewController extends Controller
         return view('contact/index');
     }
     public function aboutUs(){
-        return view('about/index');
+        $about = AboutUs::first();
+
+        return view('about/index', compact('about'));
     }
 }
