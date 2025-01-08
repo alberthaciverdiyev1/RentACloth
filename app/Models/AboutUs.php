@@ -21,4 +21,19 @@ class AboutUs extends Model
         'w_description_2',
         'w_description_3',
     ];
+    protected static function booted()
+    {
+        static::saved(function ($record) {
+//            dump($record->image);
+            if ($record->image) {
+                $imagePath = $record->image;
+                $imageContent = file_get_contents(storage_path('app/public/storage/' . $imagePath));
+                $base64Image = base64_encode($imageContent);
+
+                $record->update([
+                    'base64_main_image' => 'data:image/' . pathinfo($imagePath, PATHINFO_EXTENSION) . ';base64,' . $base64Image
+                ]);
+            }
+        });
+    }
 }
