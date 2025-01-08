@@ -11,11 +11,13 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\FileUpload;
+use Illuminate\Support\Facades\Storage;
 
 
 class AboutUsResource extends Resource
@@ -67,16 +69,33 @@ class AboutUsResource extends Resource
 
                     ])->columnSpan(1),
 
-                Section::make('')->schema([
-                    FileUpload::make('image')
-                        ->image()
-                        ->imageEditor()
-//                        ->imageEditorAspectRatios([
-//                            '16:9',
-//                            '4:3',
-//                            '1:1',
-//                        ])
-                ])->columnSpan(1),
+
+Section::make('')->schema([
+    FileUpload::make('base64_main_image')
+        ->image()
+        ->imageEditor()
+        ->imageEditorAspectRatios([
+            '16:9',
+            '4:3',
+            '1:1',
+        ])
+        ->required()
+        ->disk('public')
+        ->directory('images/aboutUs'),
+//        ->after(function ($file) {
+//                ddd($file);
+//            if ($file) {
+//                // Save the image to the desired location
+//                $filePath = 'images/about/main_about_image.' . $file->extension();
+//                // Store the image in the 'public' disk, which will save it under 'public/storage'
+//                Storage::disk('public')->put($filePath, file_get_contents($file->getRealPath()));
+//
+//                // Optionally, you can return the path or modify the file path if needed
+//                return $filePath;
+//            }
+//        })
+])->columnSpan(1),
+
                 RichEditor::make('main_text')->label('Main text')->required()->columnSpan(2),
 
             ]);
@@ -87,34 +106,30 @@ class AboutUsResource extends Resource
     {
         return $table
             ->columns([
-                //
-            ])
-            ->filters([
-                //
-            ])
-            ->actions([
-                Tables\Actions\EditAction::make(),
-            ])
-            ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
-            ]);
+                TextColumn::make('main_text'),
+                TextColumn::make('w_title_1'),
+                TextColumn::make('w_title_2'),
+                TextColumn::make('w_title_3'),
+                TextColumn::make('w_icon_1'),
+                TextColumn::make('w_icon_2'),
+                TextColumn::make('w_icon_3'),
+                TextColumn::make('w_description_1'),
+                TextColumn::make('w_description_2'),
+                TextColumn::make('w_description_3'),
+
+//                        'base64_main_image',
+            ])->paginated(false);
+
     }
 
-    public static function getRelations(): array
-    {
-        return [
-            //
-        ];
-    }
 
     public static function getPages(): array
     {
         return [
             'index' => Pages\ListAboutUs::route('/'),
-            'create' => Pages\CreateAboutUs::route('/create'),
             'edit' => Pages\EditAboutUs::route('/{record}/edit'),
+            'create' => Pages\CreateAboutUs::route('/create'),
+
         ];
     }
 }
