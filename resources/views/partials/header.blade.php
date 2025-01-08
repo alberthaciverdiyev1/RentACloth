@@ -15,15 +15,15 @@
                             </select>
                         </div>
                         <ul class="contact_detail text-center text-lg-start">
-                            <li><i class="ti-mobile"></i><span>123-456-7890</span></li>
+                            <li><i class="ti-mobile"></i><span>{{$settings['phone']['value']}}</span></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="text-center text-md-end">
                         <ul class="header_list">
-                            <li><a href="/wishlist"><i class="ti-heart"></i><span>Wishlist</span></a></li>
-                            <li><a href="/login"><i class="ti-user"></i><span>Login</span></a></li>
+                            <li><a href=""><i class="ti-heart"></i><span>Wishlist</span></a></li>
+                            <li><a href="{{route('login')}}"><i class="ti-user"></i><span>Login</span></a></li>
                         </ul>
                     </div>
                 </div>

@@ -34,8 +34,8 @@
                                 <i class="linearicons-map2"></i>
                             </div>
                             <div class="contact_text">
-                                <span>Address</span>
-                                <p>123 Street, Old Trafford, London, UK</p>
+                                <span>{{$settings['address']['title']}}</span>
+                                <p>{{$settings['address']['value']}}</p>
                             </div>
                         </div>
                     </div>
@@ -45,8 +45,8 @@
                                 <i class="linearicons-envelope-open"></i>
                             </div>
                             <div class="contact_text">
-                                <span>Email Address</span>
-                                <a href="mailto:info@sitename.com">info@yourmail.com </a>
+                                <span>{{$settings['email']['title']}}</span>
+                                <a href="mailto:{{$settings['email']['value']}}">{{$settings['email']['value']}} </a>
                             </div>
                         </div>
                     </div>
@@ -56,8 +56,8 @@
                                 <i class="linearicons-tablet2"></i>
                             </div>
                             <div class="contact_text">
-                                <span>Phone</span>
-                                <p>+ 457 789 789 65</p>
+                                <span>{{$settings['phone']['title']}}</span>
+                                <p>{{$settings['phone']['value']}}</p>
                             </div>
                         </div>
                     </div>

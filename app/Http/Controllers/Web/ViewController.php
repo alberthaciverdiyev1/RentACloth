@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Web;
 
+use App\Http\Controllers\Controller;
 use App\Models\AboutUs;
-use Illuminate\Http\Request;
 
 class ViewController extends Controller
 {

@@ -1,4 +1,4 @@
-@yield('main')
+@extends('main')
 @section('content')
     <!-- START SECTION BREADCRUMB -->
     <div class="breadcrumb_section bg_gray page-title-mini">
@@ -11,20 +11,16 @@
                 </div>
                 <div class="col-md-6">
                     <ol class="breadcrumb justify-content-md-end">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
                         <li class="breadcrumb-item"><a href="#">Pages</a></li>
                         <li class="breadcrumb-item active">Login</li>
                     </ol>
                 </div>
             </div>
-        </div><!-- END CONTAINER-->
+        </div>
     </div>
-    <!-- END SECTION BREADCRUMB -->
 
-    <!-- START MAIN CONTENT -->
     <div class="main_content">
-
-        <!-- START LOGIN SECTION -->
         <div class="login_register_wrap section">
             <div class="container">
                 <div class="row justify-content-center">
@@ -68,7 +64,6 @@
                 </div>
             </div>
         </div>
-        <!-- END LOGIN SECTION -->
 
         <!-- START SECTION SUBSCRIBE NEWSLETTER -->
         <div class="section bg_default small_pt small_pb">
@@ -90,9 +85,7 @@
                 </div>
             </div>
         </div>
-        <!-- START SECTION SUBSCRIBE NEWSLETTER -->
 
     </div>
-    <!-- END MAIN CONTENT -->
 
 @endsection

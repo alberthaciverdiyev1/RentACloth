@@ -62,15 +62,15 @@
                         <ul class="contact_info contact_info_light">
                             <li>
                                 <i class="ti-location-pin"></i>
-                                <p>123 Street, Old Trafford, New South London , UK</p>
+                                <p>{{ $settings['address']['value'] ?? '' }}</p>
                             </li>
                             <li>
                                 <i class="ti-email"></i>
-                                <a href="mailto:info@sitename.com">info@sitename.com</a>
+                                <a href="mailto:{{ $settings['email']['value'] ?? '' }}">{{ $settings['email']['value'] ?? '' }}</a>
                             </li>
                             <li>
                                 <i class="ti-mobile"></i>
-                                <p>+ 457 789 789 65</p>
+                                <p> {{ $settings['phone']['value'] ?? '' }}</p>
                             </li>
                         </ul>
                     </div>

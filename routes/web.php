@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\ViewController;
+use App\Http\Controllers\Web\ViewController;
 use Illuminate\Support\Facades\Route;
 
 /*
