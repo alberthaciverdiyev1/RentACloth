@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ViewController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [ViewController::class, 'home'])->name('home');
+Route::get('/contact-us', [ViewController::class, 'contactUs'])->name('contact_us');
+Route::get('/about-us', [ViewController::class, 'aboutUs'])->name('about_us');
+Route::get('/login', [ViewController::class, 'login'])->name('login');
+Route::get('/register', [ViewController::class, 'register'])->name('register');
+Route::get('/shop', [ViewController::class, 'shop'])->name('shop');
+//Route::get('/example/{id}', [ExampleController::class, 'show']);
+
+//Route::get('/user/{id}', function ($id) {
+//    return "User ID: " . $id;
+//})->name('user.profile');

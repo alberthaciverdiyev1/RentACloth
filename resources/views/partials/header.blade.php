@@ -33,7 +33,7 @@
     <div class="bottom_header dark_skin main_menu_uppercase">
         <div class="container">
             <nav class="navbar navbar-expand-lg">
-                <a class="navbar-brand" asp-route="HomePage">
+                <a class="navbar-brand" href="{{ route('home') }}">
                     <img class="logo_light" src="images/logo_light.png" alt="logo" />
                     <img class="logo_dark" src="images/logo_dark.png" alt="logo" />
                 </a>
@@ -48,7 +48,7 @@
 
                         </li>
                         <li class="dropdown dropdown-mega-menu">
-                            <a class="dropdown-toggle nav-link" asp-action="ShopList" asp-controller="shop" data-bs-toggle="dropdown">Shop</a>
+                            <a href="{{route('home')}}" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">Shop</a>
                             <div class="dropdown-menu">
                                 <ul class="mega-menu d-lg-flex">
                                     <li class="mega-menu-col col-lg-3">
@@ -269,8 +269,8 @@
                                 </div>
                             </div>
                         </li>
-                        <li><a class="nav-link nav_item" asp-route="ContactPage">Contact</a></li>
-                        <li><a class="nav-link nav_item" asp-route="AboutPage">About</a></li>
+                        <li><a class="nav-link nav_item" href="{{route('contact_us')}}">Contact</a></li>
+                        <li><a class="nav-link nav_item"  href="{{route('about_us')}}">About</a></li>
                     </ul>
                 </div>
                 <ul class="navbar-nav attr-nav align-items-center">

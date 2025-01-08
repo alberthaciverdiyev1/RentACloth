@@ -16,6 +16,7 @@ return new class extends Migration {
             $table->string('surname')->nullable();
             $table->string('base64image')->nullable();
             $table->integer('age')->nullable();
+            $table->string('password')->nullable();
             $table->boolean('email_confirmed')->default(false);
             $table->boolean('is_active')->default(true);
             $table->boolean('is_blocked')->default(true);
@@ -33,6 +34,7 @@ return new class extends Migration {
             $table->dropColumn('name');
             $table->dropColumn('surname');
             $table->dropColumn('base64image');
+            $table->dropColumn('password');
             $table->dropColumn('age');
             $table->dropColumn('email_confirmed');
             $table->dropColumn('is_active');
