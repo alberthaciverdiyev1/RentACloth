@@ -55,35 +55,35 @@
                                         <ul>
                                             <li class="dropdown-header">Woman's</li>
                                             <li>
-                                                <a class="dropdown-item nav-link nav_item" asp-action="ShopList" asp-controller="Shop">
+                                                <a class="dropdown-item nav-link nav_item" href="{{route('shop')}}">
                                                     Vestibulum
                                                     sed</a></li>
                                             <li>
-                                                <a class="dropdown-item nav-link nav_item" asp-controller="ShopController" asp-action="ShopList">
+                                                <a class="dropdown-item nav-link nav_item" href="{{route('shop')}}">
                                                     Donec
                                                     porttitor</a></li>
                                             <li>
-                                                <a class="dropdown-item nav-link nav_item" asp-controller="ShopController" asp-action="ShopList">
+                                                <a class="dropdown-item nav-link nav_item" href="{{route('shop')}}">
                                                     Donec vitae
                                                     facilisis</a></li>
                                             <li>
-                                                <a class="dropdown-item nav-link nav_item" asp-controller="ShopController" asp-action="ShopList">
+                                                <a class="dropdown-item nav-link nav_item" href="{{route('shop')}}">
                                                     Curabitur
                                                     tempus</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" asp-controller="ShopController" asp-action="ShopList" >Vivamus in
+                                            <li><a class="dropdown-item nav-link nav_item" href="{{route('shop')}}" >Vivamus in
                                                     tortor</a></li>
                                         </ul>
                                     </li>
                                     <li class="mega-menu-col col-lg-3">
                                         <ul>
                                             <li class="dropdown-header">Men's</li>
-                                            <li><a class="dropdown-item nav-link nav_item" asp-controller="ShopController" asp-action="ShopList" >Donec
+                                            <li><a class="dropdown-item nav-link nav_item" href="{{route('shop')}}" >Donec
                                                     vitae ante ante</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" asp-controller="ShopController" asp-action="ShopList" >Etiam ac
+                                            <li><a class="dropdown-item nav-link nav_item" href="{{route('shop')}}" >Etiam ac
                                                     rutrum</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" asp-controller="ShopController" asp-action="ShopList" >Quisque
+                                            <li><a class="dropdown-item nav-link nav_item" href="{{route('shop')}}" >Quisque
                                                     condimentum</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" asp-controller="ShopController" asp-action="ShopList" >Curabitur
+                                            <li><a class="dropdown-item nav-link nav_item" href="{{route('shop')}}" >Curabitur
                                                     laoreet</a></li>
                                             <li><a class="dropdown-item nav-link nav_item"
                                                     href="order-completed.html">Vivamus in tortor</a></li>
