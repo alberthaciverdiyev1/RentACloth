@@ -32,7 +32,7 @@ class ColorResource extends Resource
             ->schema([
                 TextInput::make('name')->required()->label('Color Name'),
                 TextInput::make('slug')->required()->label('Color Slug'),
-                ColorPicker::make('color_code')->rgba()->regex('/^rgba\((\d{1,3}),\s*(\d{1,3}),\s*(\d{1,3}),\s*(\d*(?:\.\d+)?)\)$/'),
+                ColorPicker::make('color_code')->regex('/^#([a-f0-9]{6}|[a-f0-9]{3})\b$/'),
                 Toggle::make('is_active')->label('Is Active')->default(true),
 
             ]);
@@ -46,8 +46,6 @@ class ColorResource extends Resource
                 TextColumn::make('slug')->label('Color Slug'),
                 BooleanColumn::make('is_active')->label('Is Active')->trueIcon('heroicon-o-check-circle')->falseIcon('heroicon-o-x-circle'),
                 ColorColumn::make('color_code')
-
-
             ])
             ->filters([
                 //

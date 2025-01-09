@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\AboutUs;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class ViewController extends Controller
 {
@@ -32,10 +33,37 @@ class ViewController extends Controller
 
     public function shop()
     {
-        $request = Request::create('/api/categories', 'GET');
+        $categoryRequest = Request::create('/api/categories', 'GET');
+        $categoryResponse = app()->handle($categoryRequest);
+        $categories = json_decode($categoryResponse->getContent(), true);
 
-        $response = app()->handle($request);
-        $categories = json_decode($response->getContent(), true);
-        return view('shop/shopList', ['categories' => $categories['data']]);
+        $colorRequest = Request::create('/api/colors', 'GET');
+        $colorResponse = app()->handle($colorRequest);
+        $colors = json_decode($colorResponse->getContent(), true);
+
+        $brandRequest = Request::create('/api/brands', 'GET');
+        $brandResponse = app()->handle($brandRequest);
+        $brands = json_decode($brandResponse->getContent(), true);
+
+        return view('shop/shopList', [
+            'categories' => $categories['data'],
+            'colors' => $colors['data'],
+            'brands' => $brands['data']
+        ]);
     }
+
+//    public function shop()
+//    {
+//        $categoriesResponse = Http::get('/api/categories');
+//        $categories = $categoriesResponse->json();
+//
+//        $colorsResponse = Http::get('/api/colors');
+//        $colors = $colorsResponse->json();
+//
+//        return view('shop/shopList', [
+//            'categories' => $categories['data'],
+//            'colors' => $colors['data']
+//        ]);
+//    }
+
 }

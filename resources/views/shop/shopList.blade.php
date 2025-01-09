@@ -612,14 +612,16 @@
                             <div class="widget">
                                 <h5 class="widget_title">Categories</h5>
                                 <ul class="widget_categories">
-                                        @forelse($categories as $category)
-                                            <li><a href="#"><span class="categories_name">{{ $category['name'] }}</span><span
-                                                        class="categories_num">({{$category["products_count"]}})</span></a></li>
+                                    @forelse($categories as $category)
+                                        <li><a href="#"><span
+                                                    class="categories_name">{{ $category['name'] }}</span><span
+                                                    class="categories_num">({{$category["products_count"]}})</span></a>
+                                        </li>
 
-                                        @empty
+                                    @empty
                                         <li><a href="#"><span class="categories_name">Categoriya yoxdur</span><span
                                                     class="categories_num">(9)</span></a></li>
-                                        @endforelse
+                                    @endforelse
 
 
                                 </ul>
@@ -639,43 +641,23 @@
                             <div class="widget">
                                 <h5 class="widget_title">Brand</h5>
                                 <ul class="list_brand">
-                                    <li>
+                                    @forelse($brands as $brand)
+                                        <li>
+                                            <div class="custome-checkbox">
+                                                <input class="form-check-input" type="checkbox" name="checkbox"
+                                                       id="{{$brand["id"]}}" value="">
+                                                <label class="form-check-label"
+                                                       for="{{$brand["id"]}}"><span>{{$brand["name"]}}</span></label>
+                                            </div>
+                                        </li>
+                                    @empty
                                         <div class="custome-checkbox">
                                             <input class="form-check-input" type="checkbox" name="checkbox"
-                                                   id="Arrivals" value="">
+                                                   id="" value="">
                                             <label class="form-check-label"
-                                                   for="Arrivals"><span>New Arrivals</span></label>
+                                                   for=""><span>Brand yoxdu</span></label>
                                         </div>
-                                    </li>
-                                    <li>
-                                        <div class="custome-checkbox">
-                                            <input class="form-check-input" type="checkbox" name="checkbox"
-                                                   id="Lighting" value="">
-                                            <label class="form-check-label" for="Lighting"><span>Lighting</span></label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="custome-checkbox">
-                                            <input class="form-check-input" type="checkbox" name="checkbox" id="Tables"
-                                                   value="">
-                                            <label class="form-check-label" for="Tables"><span>Tables</span></label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="custome-checkbox">
-                                            <input class="form-check-input" type="checkbox" name="checkbox" id="Chairs"
-                                                   value="">
-                                            <label class="form-check-label" for="Chairs"><span>Chairs</span></label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="custome-checkbox">
-                                            <input class="form-check-input" type="checkbox" name="checkbox"
-                                                   id="Accessories" value="">
-                                            <label class="form-check-label"
-                                                   for="Accessories"><span>Accessories</span></label>
-                                        </div>
-                                    </li>
+                                    @endforelse
                                 </ul>
                             </div>
                             <div class="widget">
@@ -693,14 +675,11 @@
                             <div class="widget">
                                 <h5 class="widget_title">Color</h5>
                                 <div class="product_color_switch">
-                                    <span data-color="#87554B"></span>
-                                    <span data-color="#333333"></span>
-                                    <span data-color="#DA323F"></span>
-                                    <span data-color="#2F366C"></span>
-                                    <span data-color="#B5B6BB"></span>
-                                    <span data-color="#B9C2DF"></span>
-                                    <span data-color="#5FB7D4"></span>
-                                    <span data-color="#2F366C"></span>
+                                    @forelse($colors as $color)
+                                        <span data-color="{{$color["color_code"]}}"></span>
+                                    @empty
+                                        <span data-color="#333333"></span>
+                                    @endforelse
                                 </div>
                             </div>
                             <div class="widget">
