@@ -12,3 +12,4 @@
 <script src="{{ asset('js/slick.min.js') }}"></script>
 <script src="{{ asset('js/jquery.elevatezoom.js') }}"></script>
 <script src="{{ asset('js/scripts.js') }}"></script>
+<script src="{{ asset('js/pages/shop/add.js') }}"></script>

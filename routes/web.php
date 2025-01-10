@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Web\ProductController;
 use App\Http\Controllers\Web\ViewController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,6 +21,8 @@ Route::get('/about-us', [ViewController::class, 'aboutUs'])->name('about_us');
 Route::get('/login', [ViewController::class, 'login'])->name('login');
 Route::get('/register', [ViewController::class, 'register'])->name('register');
 Route::get('/shop', [ViewController::class, 'shop'])->name('shop');
+Route::get('/add', [ViewController::class, 'addProduct'])->name('add_product');
+Route::post('/product-add', [ProductController::class, 'addProduct']);
 //Route::get('/example/{id}', [ExampleController::class, 'show']);
 
 //Route::get('/user/{id}', function ($id) {

@@ -271,6 +271,7 @@
                         </li>
                         <li><a class="nav-link nav_item" href="{{route('contact_us')}}">Contact</a></li>
                         <li><a class="nav-link nav_item"  href="{{route('about_us')}}">About</a></li>
+                        <li><a class="nav-link nav_item"  href="{{route('add_product')}}">Add</a></li>
                     </ul>
                 </div>
                 <ul class="navbar-nav attr-nav align-items-center">

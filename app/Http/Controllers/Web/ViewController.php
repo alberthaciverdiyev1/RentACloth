@@ -51,6 +51,25 @@ class ViewController extends Controller
             'brands' => $brands['data']
         ]);
     }
+    public function addProduct(){
+        $categoryRequest = Request::create('/api/categories', 'GET');
+        $categoryResponse = app()->handle($categoryRequest);
+        $categories = json_decode($categoryResponse->getContent(), true);
+
+        $colorRequest = Request::create('/api/colors', 'GET');
+        $colorResponse = app()->handle($colorRequest);
+        $colors = json_decode($colorResponse->getContent(), true);
+
+        $brandRequest = Request::create('/api/brands', 'GET');
+        $brandResponse = app()->handle($brandRequest);
+        $brands = json_decode($brandResponse->getContent(), true);
+
+        return view('shop/add', [
+            'categories' => $categories['data'],
+            'colors' => $colors['data'],
+            'brands' => $brands['data']
+        ]);
+    }
 
 //    public function shop()
 //    {
