@@ -7,7 +7,7 @@ $(function () {
             'quantity': $('#quantity').val(),
             'price': $('#price').val(),
             'rental_period': $('#rental_period').val(),
-            'status': $('#status').val(),
+            // 'status': $('#status').val(),
             'brand_id': $('#brand_id').val(),
             'category_id': $('#category_id').val(),
             'color_id': $('#color_id').val(),

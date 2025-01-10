@@ -22,7 +22,7 @@ Route::get('/login', [ViewController::class, 'login'])->name('login');
 Route::get('/register', [ViewController::class, 'register'])->name('register');
 Route::get('/shop', [ViewController::class, 'shop'])->name('shop');
 Route::get('/add', [ViewController::class, 'addProduct'])->name('add_product');
-Route::post('/product-add', [ProductController::class, 'addProduct']);
+Route::post('/product-add', [ProductController::class, 'store']);
 //Route::get('/example/{id}', [ExampleController::class, 'show']);
 
 //Route::get('/user/{id}', function ($id) {
