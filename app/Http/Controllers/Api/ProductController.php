@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductRequest;
 use App\Http\Resources\ProductResource;
 use App\Models\Product;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
@@ -20,41 +21,25 @@ class ProductController extends Controller
         ], 200);
     }
 
-    public function store(Request  $request)
+    public function store(ProductRequest $request)
     {
-        ddd("aaaaaaaaaaaaaaaaaaaaaaa");
         try {
-//            $validated = $request->validated();
-            $validated['status'] = $validated['status'] ?? 1;
-            $validated['slug'] = "aaaaaaaaaa";
+            $validated = $request->validated();
 
-dd($validated);
             $product = Product::create($validated);
 
-            // Başarılı yanıt döndür
             return response()->json([
                 'message' => 'Product created successfully',
                 'data' => new ProductResource($product),
             ], 201);
-        } catch (QueryException $e) {
-            // Hata mesajını logla
-            Log::error('Product creation failed: ' . $e->getMessage());
-
-            // Hata yanıtını döndür
-            return response()->json([
-                'error' => 'Failed to create product',
-                'message' => $e->getMessage(),
-            ], 500);
         } catch (\Exception $e) {
-            // Genel hataları yakala
-            Log::error('Unexpected error: ' . $e->getMessage());
-
             return response()->json([
                 'error' => 'Something went wrong',
                 'message' => $e->getMessage(),
             ], 500);
         }
     }
+
     public function show($id)
     {
         $product = Product::findOrFail($id);

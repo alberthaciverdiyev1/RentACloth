@@ -2,8 +2,8 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class ProductRequest extends FormRequest
 {
@@ -12,16 +12,15 @@ class ProductRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
      * Get the validation rules that apply to the request.
-     *
-     * @return array<string, ValidationRule|array<mixed>|string>
      */
     public function rules(): array
     {
+
         return [
             'name' => 'required|string|max:255',
             'quantity' => 'required|integer|min:1',
@@ -35,14 +34,26 @@ class ProductRequest extends FormRequest
             'material' => 'nullable|string|max:255',
             'condition' => 'nullable|string|max:255',
             'description' => 'nullable|string|max:1000',
+            'slug' => [
+                'nullable',
+                'string',
+                Rule::unique('products', 'slug')->ignore($this->route('product'))
+            ],
         ];
+
     }
 
+    /**
+     * Custom error messages for validation rules.
+     */
     public function messages()
     {
         return [
-            'name.required' => 'Product name is required.',
-            'quantity.required' => 'Quantity is required.',
+            'name.required' => 'The product name is required.',
+            'quantity.required' => 'The quantity is required.',
+            'price.required' => 'The price is required.',
+            'price.numeric' => 'The price must be a valid number.',
+            'slug.unique' => 'The slug has already been taken.',
         ];
     }
 }
